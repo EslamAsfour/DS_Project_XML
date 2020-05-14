@@ -3,6 +3,7 @@
 <name>
 Belgian Waffles
 </name>
+<Test id=10/>
 <price>
 $5.95
 </price>

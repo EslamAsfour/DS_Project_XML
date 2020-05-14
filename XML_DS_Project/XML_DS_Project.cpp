@@ -15,7 +15,6 @@ int main()
 {
 	string input;
 	ifstream inFile;
-	vector<Node> InputNodes;
 	XML_Tree Main;
 	int count = 0;
 	inFile.open("test.txt");
@@ -30,6 +29,7 @@ int main()
 		//Opening Tag			// We can take Tag name and Attribute from this line
 		if(input[0] == '<' && input[1] != '/' )
 		{   
+			
 			count++;
 			int index;
 			// Searching for the space to get the tag name only from the line
@@ -44,9 +44,20 @@ int main()
 			}
 			string tag = input.substr(1, index-1);
 			string att = input.substr(index + 1);
-			InputNodes.push_back(Node( att.substr(0,att.length()-1), tag));
-			Node* In = new Node(att.substr(0, att.length() - 1), tag);
-			Main.insertChild(In);
+			// check if <tag attr/> "Opening and closing tag shortcut"
+			if (input[input.length() - 2] == '/')
+			{
+				Node* In = new Node(att.substr(0, att.length() - 1), tag);
+				Main.insertChild(In);
+				Main.DoneNode();
+			}
+			else 
+			{
+				Node* In = new Node(att.substr(0, att.length() - 1), tag);
+				Main.insertChild(In);
+			}
+			
+			
 		}
 		//Closing tag
 		else if (input[0] == '<' && input[1] == '/')
