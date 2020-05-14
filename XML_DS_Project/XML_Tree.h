@@ -31,8 +31,10 @@ public:
 	XML_Tree();
 	XML_Tree(Node* Head);
 	~XML_Tree();
+	Node* GetHead() { return Head; }
 	void insertChild(Node *child);
 	Node* returnRecentNode();
 	void DoneNode();
+	void print(Node* head, int level);
 };
 

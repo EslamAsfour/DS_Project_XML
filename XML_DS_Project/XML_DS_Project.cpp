@@ -72,9 +72,9 @@ int main()
 			mostRec->Data = input;
 		}
 	}
-
+	Main.print(Main.GetHead() , 0);
 	inFile.close();
-
+	
     return 0;
 }
 
