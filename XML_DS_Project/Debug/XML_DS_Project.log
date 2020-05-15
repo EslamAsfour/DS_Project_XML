@@ -1,4 +1,2 @@
-﻿  XML_Tree.cpp
-c:\users\legion\documents\visual studio 2015\projects\xml_ds_project\xml_ds_project\xml_tree.cpp(70): warning C4018: '<': signed/unsigned mismatch
-  XML_DS_Project.vcxproj -> C:\Users\LEGION\documents\visual studio 2015\Projects\XML_DS_Project\Debug\XML_DS_Project.exe
+﻿  XML_DS_Project.vcxproj -> C:\Users\LEGION\documents\visual studio 2015\Projects\XML_DS_Project\Debug\XML_DS_Project.exe
   XML_DS_Project.vcxproj -> C:\Users\LEGION\documents\visual studio 2015\Projects\XML_DS_Project\Debug\XML_DS_Project.pdb (Full PDB)

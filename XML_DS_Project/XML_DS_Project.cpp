@@ -9,7 +9,7 @@
 
 using namespace std;
 
-
+void formatting_xml(Node *N);
 
 int main()
 {
@@ -72,12 +72,54 @@ int main()
 			mostRec->Data = input;
 		}
 	}
-	Main.print(Main.GetHead() , 0);
-	inFile.close();
 	
+	inFile.close();
+	formatting_xml(Main.GetHead());
     return 0;
 }
 
 
 
 
+void formatting_xml(Node *N)
+{
+
+	string tab = " ";
+
+	string TN;
+	//print opening tag
+	if (N->Attribute == "" && N->Data == "")
+	{
+		TN = "<" + N->TagName + ">";
+	}
+
+	else if (N->Attribute != "" && N->Data == "")
+	{
+		TN = "<" + N->TagName + N->Attribute + ">";
+	}
+
+	else if (N->Attribute == "" && N->Data != "")
+	{
+		TN = "<" + N->TagName + ">" + N->Data;
+	}
+
+	else
+	{
+		TN = "<" + N->TagName + N->Attribute + ">" + N->Data;
+	}
+	cout << tab << TN << endl;
+
+	tab += " ";
+	for (int i = 0; i<N->Children.size(); ++i)
+	{
+		if (N->Children[i] != NULL)
+			formatting_xml(N->Children[i]);
+	}
+
+	tab += " ";
+	tab.erase(0, 1);
+
+	TN = "</" + N->TagName + ">";
+	cout << tab << TN << endl;
+
+}

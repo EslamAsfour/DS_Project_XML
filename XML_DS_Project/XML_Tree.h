@@ -35,6 +35,6 @@ public:
 	void insertChild(Node *child);
 	Node* returnRecentNode();
 	void DoneNode();
-	void print(Node* head, int level);
+	
 };
 
